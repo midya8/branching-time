@@ -1,4 +1,4 @@
-# BranchLab
+# Branching time
 
 Check CTL formulas on a small supplied state graph. Inspect every subformula's
 truth set, fixed-point round, predecessor check and subset image. Separate
@@ -6,13 +6,13 @@ ordinary and fair-path inspectors make their path assumptions explicit.
 
 The default model has a waiting state that can loop or move to a goal. `AG EF p` holds at both states: a goal remains reachable everywhere. `AF p` fails at the waiting state: an infinite wait is still a valid path. No unstated fairness assumption erases it.
 
-- [Live workbench](https://midya8.github.io/branchlab/)
+- [Live workbench](https://midya8.github.io/branching-time/)
 - [Method, source notes and proof limits](METHOD.md)
 - [Editable default model](examples/always-possible.json)
 
 ## Fair paths and vacuous claims
 
-The separate [fair-path inspector](https://midya8.github.io/branchlab/fair.html) adds zero to four state-justice sets. A fair infinite path must meet each set infinitely often on the same execution. The original ordinary-CTL page and schema are unchanged. Local atoms stay local; universal temporal claims at a state with no fair continuation are visibly labeled vacuous.
+The separate [fair-path inspector](https://midya8.github.io/branching-time/fair.html) adds zero to four state-justice sets. A fair infinite path must meet each set infinitely often on the same execution. The original ordinary-CTL page and schema are unchanged. Local atoms stay local; universal temporal claims at a state with no fair continuation are visibly labeled vacuous.
 
 The default repeated-hub walk `s0 → s1 → s0 → s2 → s0` meets two justice sets that no first-repeat simple cycle can cover. A trap retains its p label but admits no fair path. All induced state regions, component justice intersections, backward rounds, canonical prefix/closed-walk witnesses and ordinary-versus-fair subformula truth sets are inspectable. Fair EG restricts to the operand first; ordinary EG intersected with globally fair states is not enough.
 
